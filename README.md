@@ -12,6 +12,9 @@ chmod +x /etc/bind/bindupdate.sh
 
 nano /etc/cron.d/bindupdate
 
+
+```bash
+
 #minute (0-59)
 #|   hour (0-23)
 #|   |    day of the month (1-31)
@@ -21,3 +24,4 @@ nano /etc/cron.d/bindupdate
 #|   |    |   |   |   |
 #### refresh bind anti-ad server list
  15   7   *  *   1   /3 /etc/bind/bindupdate.sh>> /dev/null 2>&1
+```
