@@ -6,7 +6,10 @@ Automatically update pgl.yoyo.org bind9 zonefile
 
 ==================
 ```bash
-git clone https://github.com/MLWALK3R/Automatic-bind9-update.git /etc/bind/
+cd /etc/bind
+```
+```bash
+git clone https://github.com/MLWALK3R/Automatic-bind9-update.git 
 ```
 ```bash
 chmod +x /etc/bind/Automatic-bind9-update/bindupdate.sh
