@@ -5,13 +5,13 @@ Automatically update pgl.yoyo.org bind9 zonefile
 
 
 ==================
-
-wget http://dl.networklinx.com/bindupdate.sh -P /etc/bind/
-
-chmod +x /etc/bind/bindupdate.sh
-
+```bash
+git clone https://github.com/MLWALK3R/Automatic-bind9-update.git /etc/bind/
+```
+chmod +x /etc/bind/Automatic-bind9-update/bindupdate.sh
+```bash
 nano /etc/cron.d/bindupdate
-
+```
 
 ```bash
 
@@ -23,5 +23,5 @@ nano /etc/cron.d/bindupdate
 #|   |    |   |   |   commands
 #|   |    |   |   |   |
 #### refresh bind anti-ad server list
- 15   7   *  *   1   /3 /etc/bind/bindupdate.sh>> /dev/null 2>&1
+ 15   7   *  *   1   /3 /etc/bind/Automatic-bind9-update/bindupdate.sh>> /dev/null 2>&1
 ```
