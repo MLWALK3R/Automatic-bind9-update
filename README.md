@@ -9,10 +9,10 @@ Automatically update pgl.yoyo.org bind9 zonefile
 cd /etc/bind
 ```
 ```bash
-git clone https://github.com/MLWALK3R/Automatic-bind9-update.git 
+wget -O /etc/bind/bindupdate.sh https://raw.github.com/MLWALK3R/Automatic-bind9-update/master/bindupdate.sh
 ```
 ```bash
-chmod +x /etc/bind/Automatic-bind9-update/bindupdate.sh
+chmod +x /etc/bind/bindupdate.sh
 ```
 ```bash
 nano /etc/cron.d/bindupdate
@@ -28,5 +28,5 @@ nano /etc/cron.d/bindupdate
 #|   |    |   |   |   commands
 #|   |    |   |   |   |
 #### refresh bind anti-ad server list
- 15   7   *  *   1   /3 /etc/bind/Automatic-bind9-update/bindupdate.sh>> /dev/null 2>&1
+ 15   7   *  *   1   /3 /etc/bind/bindupdate.sh>> /dev/null 2>&1
 ```
