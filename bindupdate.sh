@@ -9,6 +9,8 @@ if [ -f /etc/init.d/bind9 ];  then
   echo -e "reloading Bind9"
   /etc/init.d/bind9 reload
   exit 1
+  echo -e "\E[32;40m Done! \e[0m"
+
 else 
   echo -e "\e[0;31m Bind9 is not installed \e[0m"
   exit 1
