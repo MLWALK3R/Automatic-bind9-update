@@ -1,7 +1,7 @@
 Automatic-bind9-update
 ======================
 
-Automatically update pgl.yoyo.org bind9 zonefile
+This script is desgined to automatically update your name.conf file with URL's from  pgl.yoyo.org, what does  that mean? Means you block ads at the DNS level like a BOSS!
 
 
 ==================
