@@ -6,7 +6,7 @@ Automatically update pgl.yoyo.org bind9 zonefile
 
 ==================
 
-Copy and paste install!
+**Curl** (Copy and paste downloading)
 ```bash
 curl -s  https://raw.github.com/MLWALK3R/Automatic-bind9-update/master/bindupdate.sh | bash
 ```
