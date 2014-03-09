@@ -16,7 +16,7 @@
     echo -e "\E[32;40m[*] Check done [*]\e[0m" 
     echo -e "\E[32;40m[*] This is your first time running this script! [*]\e[0m"
     sleep 1
-    echo "\E[32;40m[*]Adding named.conf.ads to name.conf.local [*]\e[0m"
+    echo "\E[32;40m[*] Adding named.conf.ads to name.conf.local [*]\e[0m"
     echo "include "/etc/bind/named.conf.ads";" >> named.conf.local
     echo -e "\E[32;40m[*] Updating your ad-block list [*]\e[0m"
     sleep 2
