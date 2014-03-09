@@ -38,7 +38,7 @@ else
   read -p "Add to Cron? . (y/n) " REPLY
   if [ "$REPLY" = "y" ]; then
     echo -e "\E[33;40m[*] Adding Cron task [*]\e[0m"
-    curl -s "https://raw.github.com/MLWALK3R/Automatic-bind9-update/bind9ads.cron" > /etc/cron.d/bind9ads.cron
+    curl -s "https://raw.github.com/MLWALK3R/Automatic-bind9-update/bind9ads.cron" >> /etc/cron.d/bind9ads.cron
     echo -e "\E[32;40m[*] Done [*]\e[0m"
     exit 1
   else
