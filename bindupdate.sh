@@ -8,8 +8,8 @@
       echo -e "\E[32;40m[*] Check done [*]\e[0m" 
     echo -e "\E[33;40m[*] Updating your ad-block list [*]\e[0m"
     sleep 2
-    curl -s "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=bindconfig;showintro=0&mimetype=plaintext" > /etc/dnsmasq.d/ads.dnsmasq.conf
-    echo -e "reloading dnsmasq"
+    curl -s "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=bindconfig;showintro=0&mimetype=plaintext" > /etc/bind/named.conf.ads
+    echo -e "reloading bind9"
     /etc/init.d/bind9 restart
     echo -e "\E[32;40m[*] updated ad list [*]\e[0m"
   else 
@@ -20,8 +20,8 @@
     echo "include "/etc/bind/named.conf.ads";" >> named.conf.local
     echo -e "\E[32;40m[*] Updating your ad-block list [*]\e[0m"
     sleep 2
-    curl -s "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=bindconfig;showintro=0&mimetype=plaintext" > /etc/dnsmasq.d/ads.dnsmasq.conf
-    echo -e "reloading dnsmasq"
+    curl -s "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=bindconfig;showintro=0&mimetype=plaintext" > /etc/bind/named.conf.ads
+    echo -e "reloading bind9"
     /etc/init.d/bind9 restart
     echo -e "\E[32;40m[*] Update done [*]\e[0m"
 
@@ -31,7 +31,7 @@ else
   exit 1
   fi
 
-if [ -f /etc/cron.d/dnsmasq.cron ]; then
+if [ -f /etc/cron.d/bind9ads.cron ]; then
   echo -e "\E[32;40m Cron already installed \e[0m"
   echo -e "\E[32;40m Finished Script \e[0m"
 else
