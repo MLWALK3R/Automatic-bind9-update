@@ -6,6 +6,10 @@ This script is desgined to automatically update your name.conf file with URL's f
 
 ==================
 
+(You will need to add this to named.conf.local  )
+```bash 
+    "include "/etc/bind/named.conf.ads";
+```
 **Curl** (Copy and paste install)
 ```bash
 bash <(curl -s  https://raw.github.com/MLWALK3R/Automatic-bind9-update/master/bindupdate.sh ) 
