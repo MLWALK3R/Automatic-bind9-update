@@ -9,6 +9,7 @@
     echo -e "\E[33;40m[*] Updating your ad-block list [*]\e[0m"
     sleep 2
     curl -s "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=bindconfig;showintro=0&mimetype=plaintext" > /etc/bind/named.conf.ads
+    sed -i 's:null.zone.file:/etc/bind/null.zone.file:g' /etc/bind/named.conf.ads
     echo -e "reloading bind9"
     /etc/init.d/bind9 restart
     echo -e "\E[32;40m[*] updated ad list [*]\e[0m"
@@ -19,6 +20,7 @@
     echo -e "\E[32;40m[*] Updating your ad-block list [*]\e[0m"
     sleep 2
     curl -s "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=bindconfig;showintro=0&mimetype=plaintext" > /etc/bind/named.conf.ads
+    sed -i 's:null.zone.file:/etc/bind/null.zone.file:g' /etc/bind/named.conf.ads
     echo -e "reloading bind9"
     /etc/init.d/bind9 restart
     echo -e "\E[32;40m[*] Update done [*]\e[0m"
@@ -33,6 +35,25 @@ if [ -f /etc/cron.d/bind9ads.cron ]; then
   echo -e "\E[32;40m Cron already installed \e[0m"
   echo -e "\E[32;40m Finished Script \e[0m"
 else
+  echo -e "\E[33;40m Adding null zone file [*]\e[0m"
+  touch /etc/bind/null.zone.file
+  cat > /etc/bind/null.zone.file <<EOF
+  $TTL    86400   ; one day
+
+  @       IN      SOA     ns0.example.net.      hostmaster.example.net. (
+                         2002061000       ; serial number YYMMDDNN
+                         28800   ; refresh  8 hours
+                         7200    ; retry    2 hours
+                         864000  ; expire  10 days
+                         86400 ) ; min ttl  1 day
+                 NS      ns0.example.net.
+                 NS      ns1.example.net.
+
+                 A       127.0.0.1
+
+  *               IN      A       127.0.0.1
+
+  EOF
   read -p "Add to Cron? . (y/n) " REPLY
   if [ "$REPLY" = "y" ]; then
     echo -e "\E[33;40m[*] Adding Cron task [*]\e[0m"
