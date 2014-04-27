@@ -12,5 +12,5 @@ include "/etc/bind/named.conf.ads";
 ```
 **Curl** (Copy and paste install)
 ```bash
-bash <(curl -s  https://raw.github.com/MLWALK3R/Automatic-bind9-update/master/bindupdate.sh ) 
+bash <(curl -s  https://raw.githubusercontent.com/MLWALK3R/Automatic-bind9-update/master/bindupdate.sh ) 
 ```
