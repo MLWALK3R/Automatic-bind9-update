@@ -6,4 +6,4 @@
 #|   |    |   |   |   commands
 #|   |    |   |   |   |
 #### refresh bind anti-ad server list
- 15   7   *  *   1   /3 curl -s https://raw.github.com/MLWALK3R/Automatic-bind9-update/master/bindupdate.sh  | bash >> /dev/null 2>&1
+ 15   7   *  *   1   /3 curl -s https://raw.githubusercontent.com/MLWALK3R/Automatic-bind9-update/master/bindupdate.sh  | bash >> /dev/null 2>&1
