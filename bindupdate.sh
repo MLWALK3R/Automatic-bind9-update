@@ -38,7 +38,7 @@ else
   echo -e "\E[33;40m Adding null zone file [*]\e[0m"
   touch /etc/bind/null.zone.file
   cat > /etc/bind/null.zone.file <<EOF
-  $TTL    86400   ; one day
+  \$TTL    86400   ; one day
 
   @       IN      SOA     ns0.example.net.      hostmaster.example.net. (
                          2002061000       ; serial number YYMMDDNN
@@ -53,7 +53,7 @@ else
 
   *               IN      A       127.0.0.1
 
-  EOF
+EOF
   read -p "Add to Cron? . (y/n) " REPLY
   if [ "$REPLY" = "y" ]; then
     echo -e "\E[33;40m[*] Adding Cron task [*]\e[0m"
