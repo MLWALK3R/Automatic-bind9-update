@@ -8,7 +8,7 @@
       echo -e "\E[32;40m[*] Check done [*]\e[0m" 
     echo -e "\E[33;40m[*] Updating your ad-block list [*]\e[0m"
     sleep 2
-    curl -s "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=bindconfig;showintro=0&mimetype=plaintext" > /etc/bind/named.conf.ads
+    curl -s "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=bindconfig;showintro=0&mimetype=plaintext" > /etc/bind/named.conf.ads
     sed -i 's:null.zone.file:/etc/bind/null.zone.file:g' /etc/bind/named.conf.ads
     echo -e "reloading bind9"
     /etc/init.d/bind9 restart
@@ -19,7 +19,7 @@
     sleep 1
     echo -e "\E[32;40m[*] Updating your ad-block list [*]\e[0m"
     sleep 2
-    curl -s "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=bindconfig;showintro=0&mimetype=plaintext" > /etc/bind/named.conf.ads
+    curl -s "https://pgl.yoyo.org/adservers/serverlist.php?hostformat=bindconfig;showintro=0&mimetype=plaintext" > /etc/bind/named.conf.ads
     sed -i 's:null.zone.file:/etc/bind/null.zone.file:g' /etc/bind/named.conf.ads
     echo -e "reloading bind9"
     /etc/init.d/bind9 restart
